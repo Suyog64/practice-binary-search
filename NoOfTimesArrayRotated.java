@@ -9,14 +9,14 @@ public class NoOfTimesArrayRotated {
 		int end = n - 1;
 		while (start <= end) {
 			int mid = start + (end - start) / 2;
-			int prev = (mid + 1) % n;
-			int next = (mid + n - 1) % n;
-			if (a[mid] <= a[next] && a[mid] >= a[prev]) {
+			int prev = (mid - 1 + n) % n;
+			int next = (mid + 1) % n;
+			if (a[mid] <= a[prev] && a[mid] <= a[next]) {
 				return mid;
-			} 
-			if (a[start] <= a[mid]) {
+			}
+			if (a[0] <= a[mid]) {
 				start = mid + 1;
-			} else if (a[mid] <= a[end]) {
+			} else if (a[mid] <= a[n-1]) {
 				end = mid - 1;
 			}
 		}

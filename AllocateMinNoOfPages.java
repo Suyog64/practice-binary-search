@@ -2,8 +2,12 @@ package com.test;
 
 public class AllocateMinNoOfPages {
 
+	// problem link : https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1
 	public static int minNoOfPages(int arr[], int k) {
 		int n = arr.length;
+		if (n < k) {
+			return -1;
+		}
 		int start = maxOfArray(arr);
 		int end = sumOfArray(arr);
 		int res = -1;
